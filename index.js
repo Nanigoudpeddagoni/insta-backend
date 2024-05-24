@@ -23,15 +23,15 @@ require("./createpost.js")
 require("./model/mongoose.js")
 
 const { castObject } = require('./model/schema.js');
-app.use(express.static(path.join(__dirname, './mt')))
-app.get("*",(req,res)=>{
-    res.sendFile(
-        path.join(__dirname,"./mt/index.html"),
-        function (err){
-             res.status(500).send(err)
-        }
-    )
-})
+// app.use(express.static(path.join(__dirname, './mt')))
+// app.get("*",(req,res)=>{
+//     res.sendFile(
+//         path.join(__dirname,"./mt/index.html"),
+//         function (err){
+//              res.status(500).send(err)
+//         }
+//     )
+// })
 
 app.listen(port, () => {
     console.log("The server is running on the port 4000")
