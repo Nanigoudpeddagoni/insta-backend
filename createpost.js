@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const mongoose =require('mongoose')
-const required = require('../backend/middelware/require')
+const required = require('./middelware/require')
 router.use(express.json())
-const POST =require('../backend/model/postSchema')
+const POST =require('./model/postSchema')
 const { populate } = require('./model/schema')
 const { json } = require('body-parser')
 

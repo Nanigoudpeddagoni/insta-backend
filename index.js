@@ -1,14 +1,17 @@
 const express = require('express');
 const port = process.env.port || 4000;
 const app = express();
+require('dotenv').config()
+
 const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyparser = require('body-parser')
-const login = require('../backend/authentication/signin.js')
-const signup = require('../backend/authentication/signup.js')
-const required = require('../backend/middelware/require.js')
-const data = require("../backend/createpost.js")
+const login = require('./authentication/signin.js')
+const signup = require('./authentication/signup.js')
+const required = require('./middelware/require.js')
+const data = require("./createpost.js")
 const path = require('path')
+
 app.use(cors())
 app.use("/auth", signup)
 app.use("/auth", login)
@@ -16,7 +19,7 @@ app.use("/auth", data)
 app.use(express.json())
 require('dotenv').config()
 
-require("../backend/createpost.js")
+require("./createpost.js")
 require("./model/mongoose.js")
 
 const { castObject } = require('./model/schema.js');
@@ -32,6 +35,8 @@ app.get("*",(req,res)=>{
 
 app.listen(port, () => {
     console.log("The server is running on the port 4000")
+    console.log(process.env.mongo_url)
+    console.log("nani")
 
 })
 
