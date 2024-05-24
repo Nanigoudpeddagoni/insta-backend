@@ -41,7 +41,9 @@ app.listen(port, () => {
 })
 
 
-
+app.get("/",(req,res)=>{
+    res.send("hello i am running")
+})
 
 
 app.get("/post", required, (req, res) => {
