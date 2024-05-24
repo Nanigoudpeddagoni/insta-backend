@@ -14,7 +14,7 @@ const bodyParser = require("body-parser")
 const path = require('path')
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://insta-frontend-rho.vercel.app'
 }));
 app.use("/auth", signup)
 app.use("/auth", login)
