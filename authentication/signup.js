@@ -8,6 +8,11 @@ const usr = require("../model/schema")
 router.use(express.json())
 
 
+router.post("/signUp", async (req, res) => { 
+
+    res.send("running route")
+}) 
+
 router.post("/signUp", async (req, res) => {    
     try {
         const { email, phone, name, username, password } = req.body;
