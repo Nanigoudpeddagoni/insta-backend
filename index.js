@@ -10,6 +10,7 @@ const login = require('./authentication/signin.js')
 const signup = require('./authentication/signup.js')
 const required = require('./middelware/require.js')
 const data = require("./createpost.js")
+const bodyParser = require("body-parser")
 const path = require('path')
 
 app.use(cors())
@@ -17,6 +18,7 @@ app.use("/auth", signup)
 app.use("/auth", login)
 app.use("/auth", data)
 app.use(express.json())
+app.use(bodyParser.json());
 require('dotenv').config()
 
 require("./createpost.js")
