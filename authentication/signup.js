@@ -8,7 +8,7 @@ const usr = require("../model/schema")
 router.use(express.json())
 
 
-router.post("/signUp", async (req, res) => { 
+router.get("/signUp", async (req, res) => { 
 
     res.send("running route")
 }) 
